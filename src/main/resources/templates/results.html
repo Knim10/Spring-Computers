@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>View All Computers</title>
+</head>
+
+<body>
+	<form>
+		<table>
+			<tr th:each="currentComputer: ${computers}">
+				<td th:text="'ID:' + ${currentComputer.id}" />
+				<td th:text="', Computer Name:' + ${currentComputer.name}" />
+				<td th:text="', Number of Cores:' + ${currentComputer.numCores}" />
+				<td th:text="', Storage Space (TB):' + ${currentComputer.storageSpace}" />
+				<td th:text="', Owner:' + ${currentComputer.computerInfo.owner}" />
+				<td th:text="', Username:' + ${currentComputer.computerInfo.userName}" />
+				<td th:text="', Passowrd:' + ${currentComputer.computerInfo.Password}" />
+				<td><a th:href="@{/edit/{id}(id=${currentComputer.id})}">Edit</a></td>
+				<td><a th:href="@{/delete/{id}(id=${currentComputer.id})}">Delete</a></td>
+			</tr>
+		</table>
+	</form>
+	<a href="../inputComputer">Add a New Computer</a>
+</body>
+
+</html>
