@@ -5,11 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.Data;
 
 /**
  * @author Kenneth Nimmo - Knimmo CIS175 - Fall 2021 Oct 18, 2023
  */
 @Entity
+@Data
 public class Computer {
 	@Id
 	@GeneratedValue
@@ -60,76 +62,6 @@ public class Computer {
 		this.name = name;
 		this.numCores = numCores;
 		this.storageSpace = storageSpace;
-	}
-
-	/**
-	 * @return the id
-	 */
-	public long getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
-	 * @return the numCores
-	 */
-	public int getNumCores() {
-		return numCores;
-	}
-
-	/**
-	 * @param numCores the numCores to set
-	 */
-	public void setNumCores(int numCores) {
-		this.numCores = numCores;
-	}
-
-	/**
-	 * @return the storageSpace
-	 */
-	public double getStorageSpace() {
-		return storageSpace;
-	}
-
-	/**
-	 * @param storageSpace the storageSpace to set
-	 */
-	public void setStorageSpace(double storageSpace) {
-		this.storageSpace = storageSpace;
-	}
-
-	/**
-	 * @return the computerInfo
-	 */
-	public ComputerInformation getComputerInfo() {
-		return computerInfo;
-	}
-
-	/**
-	 * @param computerInfo the computerInfo to set
-	 */
-	public void setComputerInfo(ComputerInformation computerInfo) {
-		this.computerInfo = computerInfo;
 	}
 
 	@Override
